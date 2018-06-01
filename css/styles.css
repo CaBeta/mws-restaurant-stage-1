@@ -57,6 +57,7 @@ nav {
 }
 nav h1 {
   margin: auto;
+  line-height: 80px;
 }
 nav h1 a {
   color: #fff;
@@ -71,7 +72,7 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+    width: calc(50% - 30px);
 }
 
 /* Display list items side by side */
@@ -136,6 +137,10 @@ nav h1 a {
   margin: 0;
   padding: 30px 15px 60px;
   text-align: center;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, 350px);
+  grid-template-rows: repeat(2, 540px);
 }
 #restaurants-list li {
   background-color: #fff;
@@ -191,11 +196,11 @@ nav h1 a {
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
+  height: calc(100% - 80px);
   position: fixed;
   right: 0;
   top: 80px;
-  width: 50%;
+  width: calc(50% - 50px);
 }
 .inside #map {
   background-color: #ccc;
@@ -272,4 +277,38 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+/* ====================== pad ====================== */
+@media screen and (max-width:1024px){
+  .inside #map-container {
+    height: 400px;
+    width: 100%;
+    background-color: #ccc;
+    top: 131px;
+    position: relative;
+  }
+  #restaurant-container, #reviews-container {
+    width: 100%;
+  }
+  #breadcrumb {
+    width: 100%;
+  }
+  .inside #footer {
+    width: 100%;
+  }
+}
+/* ====================== phone ====================== */
+@media screen and (max-width:414px){
+  nav h1 a {
+    letter-spacing: 5px;
+  }
+  #restaurant-container, #reviews-container {
+    padding-left:20px;
+    padding-right: 20px;
+    width: 100%;
+  }
+  #footer{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
