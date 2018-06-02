@@ -155,6 +155,12 @@ class DBHelper {
   static lowLevelImageUrlForRestaurant(restaurant) {
     return (`/img/${restaurant.photograph.lowLevel}`);
   }
+  /**
+   * Restaurant name.
+   */
+  static nameForRestaurant(restaurant) {
+    return (`${restaurant.name}`);
+  }
 
   /**
    * Map marker for a restaurant.
