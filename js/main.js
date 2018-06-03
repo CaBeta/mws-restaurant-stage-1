@@ -25,6 +25,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
   fetchCuisines();
 });
+document.addEventListener('keydown', (event) => {
+  if (event.key == 'Tab') {
+    if (document.activeElement == document.querySelector('a')) {
+      document.querySelector('.filter-options').focus();
+    }
+  }
+});
 
 /**
  * Fetch all neighborhoods and set their HTML.

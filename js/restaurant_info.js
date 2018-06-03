@@ -1,5 +1,22 @@
 let restaurant;
 var map;
+let lastActiveElement = document.activeElement;
+window.onload = function(){
+  document.addEventListener('keyup', (event) => {
+    const restaurant = document.querySelector('#restaurant-container');
+    const review = document.querySelector('#reviews-container');
+    if (event.key == 'Tab') {
+      if (lastActiveElement == document.querySelectorAll('a')[1]) {
+        restaurant.focus();
+        console.log(restaurant);
+      }
+      if (lastActiveElement == restaurant) {
+        review.focus();
+      }
+    }
+    lastActiveElement = document.activeElement;
+  });
+}
 
 /**
  * Initialize Google map, called from HTML.
