@@ -4,6 +4,20 @@ let restaurants,
 var map
 var markers = []
 
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js', {
+    scope: './'
+  }).then(function (reg) {
+  }).catch(function (error) {
+    //  The service-worker.js file
+    // might be unavailable or contain a syntax error.
+    console.log('Something went wrong during registration.');
+  });
+} else {
+  // The current browser doesn't support service workers.
+  console.log('The current browser doesn\'t support service workers.');
+}
+
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
