@@ -1,22 +1,5 @@
 let restaurant;
 var map;
-let lastActiveElement = document.activeElement;
-window.onload = function(){
-  document.addEventListener('keyup', (event) => {
-    const restaurant = document.querySelector('#restaurant-container');
-    const review = document.querySelector('#reviews-container');
-    if (event.key == 'Tab') {
-      if (lastActiveElement == document.querySelectorAll('a')[1]) {
-        restaurant.focus();
-        console.log(restaurant);
-      }
-      if (lastActiveElement == restaurant) {
-        review.focus();
-      }
-    }
-    lastActiveElement = document.activeElement;
-  });
-}
 
 /**
  * Initialize Google map, called from HTML.
@@ -137,24 +120,24 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  * Create review HTML and add it to the webpage.
  */
 createReviewHTML = (review) => {
-  const article = document.createElement('article');
+  const ul = document.createElement('ul');
   const name = document.createElement('p');
   name.innerHTML = review.name;
-  article.appendChild(name);
+  ul.appendChild(name);
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
-  article.appendChild(date);
+  ul.appendChild(date);
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
-  article.appendChild(rating);
+  ul.appendChild(rating);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
-  article.appendChild(comments);
+  ul.appendChild(comments);
 
-  return article;
+  return ul;
 }
 
 /**
