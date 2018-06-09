@@ -6,7 +6,9 @@ self.addEventListener('install', function (event) {
             return cache.addAll([
                 'js/',
                 'css/',
+                'data/restaurants.json',
                 'img/',
+                '/restaurant.html',
                 '/'
             ]);
         })
@@ -30,14 +32,14 @@ self.addEventListener('activate', function (event) {
 
 self.addEventListener('fetch', function (event) {
     event.respondWith(
+
         caches.match(event.request).then(function (response) {
+            var requestUrl = new URL(event.request.url);
+            // 如果访问的是详情页面 restaurant.html
+            if (requestUrl.origin === location.origin && requestUrl.pathname === '/restaurant.html') {
+                console.log("hello");
+            }
             return response || fetch(event.request);
         })
     );
 });
-
-// self.addEventListener('message', function (event) {
-//     if (event.data.action === 'skipWaiting') {
-//         self.skipWaiting();
-//     }
-// });
