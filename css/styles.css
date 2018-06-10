@@ -142,7 +142,7 @@ nav h1 a {
   grid-template-columns: repeat(auto-fit, 350px);
   grid-template-rows: repeat(2, 540px);
 }
-#restaurants-list section {
+#restaurants-list li {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
@@ -160,7 +160,7 @@ nav h1 a {
   min-height: 248px;
   min-width: 100%;
 }
-#restaurants-list section h1 {
+#restaurants-list li h3 {
   color: #f18200;
   font-family: Arial,sans-serif;
   font-size: 14pt;
@@ -174,7 +174,7 @@ nav h1 a {
   margin: 0;
   font-size: 11pt;
 }
-#restaurants-list section a {
+#restaurants-list li a {
   background-color: orange;
   border-bottom: 3px solid #eee;
   color: #fff;
@@ -261,7 +261,7 @@ nav h1 a {
   margin: 0;
   padding: 0;
 }
-#reviews-list article {
+#reviews-list li {
   background-color: #fff;
     border: 2px solid #f3f3f3;
   display: block;
@@ -272,7 +272,7 @@ nav h1 a {
   position: relative;
   width: 85%;
 }
-#reviews-list article p {
+#reviews-list li p {
   margin: 0 0 10px;
 }
 #restaurant-hours td {
