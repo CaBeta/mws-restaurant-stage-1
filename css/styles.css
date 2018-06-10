@@ -140,7 +140,7 @@ nav h1 a {
   display: grid;
   grid-gap: 5px;
   grid-template-columns: repeat(auto-fit, 350px);
-  grid-template-rows: repeat(2, 540px);
+  grid-template-rows: repeat(1, 490px);
 }
 #restaurants-list li {
   background-color: #fff;
@@ -155,7 +155,7 @@ nav h1 a {
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
-  margin: 0;
+  margin-top: 30px;
   max-width: 100%;
   min-height: 248px;
   min-width: 100%;
