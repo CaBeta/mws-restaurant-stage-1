@@ -16,6 +16,6 @@ python3 -m http.server 8000
 打开浏览器访问`http://localhost:8000`你就可以看到这个项目的全面貌了
 
 ## 参考
-MDN上的[ServiceWorker](https://developer.mozilla.org/zh-CN/docs/Web/API/ServiceWorker)
+Google开发者上的[ServiceWorker](https://developers.google.com/web/fundamentals/primers/service-workers/)
 
 
