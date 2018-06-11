@@ -5,17 +5,15 @@ var map
 var markers = []
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js', {
-    scope: './'
-  }).then(function (reg) {
-  }).catch(function (error) {
-    //  The service-worker.js file
-    // might be unavailable or contain a syntax error.
-    console.log('Something went wrong during registration.');
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
   });
-} else {
-  // The current browser doesn't support service workers.
-  console.log('The current browser doesn\'t support service workers.');
 }
 
 /**
